@@ -5,6 +5,12 @@ html, body {
 
 .demo-table td {
 	padding-right: 1rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+}
+
+.demo-table td i {
+	font-size: 16pt;
 }
 
 pre {

@@ -37,6 +37,8 @@ Of course `message` would typically can be a bound variable versus the static te
 
 This UI control depends on Twitter Bootstrap 3.x and that the popover control is enabled. Installing this control **does not** install bootstrap for you ... we leave that in your very capable hands. 
 
+> Note: the bootstrap JS has an internal dependency on the tooltip JS so you'll need both for this to work
+
 ## Installation
 
 * change directories to your project folder

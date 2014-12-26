@@ -13,7 +13,7 @@ export default Ember.Component.extend({
 	animation: true,
 	delay: 0,
 	html: true,
-	placement: 'auto top',
+	placement: 'auto bottom',
 	triggerEvent: 'click',
 	viewport: { selector: 'body', padding: 0 },
 	// Bootstrap options container
@@ -25,7 +25,7 @@ export default Ember.Component.extend({
 			delay: this.get('delay'),
 			html: this.get('html'),
 			placement: this.get('placement'),
-			trigger: this.get('trigger'),
+			trigger: this.get('triggerEvent'),
 			viewport: this.get('viewport')
 		};
 	}.property('message','title','animation','delay','html','placement','trigger','viewport'),
@@ -46,8 +46,8 @@ export default Ember.Component.extend({
 			try {
 				this.$().popover(options);
 			} catch (e) {
-				console.warn('Couldn\'t initialise popover. Check and make sure that Bootstrap and the popover JS are included in your Brocfile. %o', e);
+				console.warn('Couldn\'t initialise popover. Check and make sure that Bootstrap and the popover JS are included in your Brocfile. Error encountered: %o', e);
 			}			
-		})
+		});
 	}.on('didInsertElement')
 });
