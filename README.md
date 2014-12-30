@@ -35,9 +35,22 @@ Of course `message` would typically can be a bound variable versus the static te
 
 ## Dependencies ##
 
-This UI control depends on Twitter Bootstrap 3.x and that the popover control is enabled. Installing this control **does not** install bootstrap for you ... we leave that in your very capable hands. 
+This UI control depends on Twitter Bootstrap 3.x CSS and the `popover.js` and `tooltip.js` javascript is available. Installing this control **does not** install bootstrap for you ... we leave that in your very capable hands. If your hands aren't that capable then the basic idea is to:
 
-> Note: the bootstrap JS has an internal dependency on the tooltip JS so you'll need both for this to work
+1. Install Bootstrap with Bower (you'll need to choose the traditional repo or the SASS repo), in any case let's assume traditional for demonstration purposes:
+
+	````shell
+	bower install bootstrap --save
+	````
+
+1. Add assets in your `Brocfile`:
+
+	````javascript
+	app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+	app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+	````
+
+Of course you might just decide to install a add-on that does all this nonsense reducing the documentation in this section to needless lip flapping.
 
 ## Installation
 
@@ -46,6 +59,9 @@ This UI control depends on Twitter Bootstrap 3.x and that the popover control is
 
 Assuming you have met the dependencies stated above you are now ready to start using the control in your project. Happy trails.
 
+## Repo Contribution
+
+We're open to your creative suggestions but please move past the "idea" stage and send us a PR so we can incorporate your ideas without killing ourselves. :)
 
 ## Licensing
 
