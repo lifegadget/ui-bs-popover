@@ -49,5 +49,8 @@ export default Ember.Component.extend({
 				console.warn('Couldn\'t initialise popover. Check and make sure that Bootstrap and the popover JS are included in your Brocfile. Error encountered: %o', e);
 			}			
 		});
-	}.on('didInsertElement')
+	}.on('didInsertElement'),
+	_cleanUp: function() {
+		this.$().popover('destroy');
+	}.on('willDestroyElement')
 });
