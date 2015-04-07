@@ -17,7 +17,7 @@ export default Ember.Component.extend({
 	triggerEvent: 'click',
 	viewport: { selector: 'body', padding: 0 },
 	// Bootstrap options container
-	options: function() {
+	options: Ember.computed('message','title','animation','delay','html','placement','trigger','viewport', function() {
 		return {
 			content: this.get('message'),
 			title: this.get('title'),
@@ -28,19 +28,19 @@ export default Ember.Component.extend({
 			trigger: this.get('triggerEvent'),
 			viewport: this.get('viewport')
 		};
-	}.property('message','title','animation','delay','html','placement','trigger','viewport'),
+	}),
 	// Non-Bootstrap Configuration Options
 	cursor: 'pointer',
-	popoverStyles: function() {
+	popoverStyles: Ember.computed('cursor', function() {
 		var style = this.getProperties('cursor');
 		if (!style.cursor) {
 			style.cursor === 'auto';
 		}
-		return 'cursor: %@; '.fmt(style.cursor);
-	}.property('cursor'),
+		return `cursor: ${style.cursor};`;
+	}),
 	
 	// Initialiser
-	_initialise: function() {
+	_initialise: Ember.on('didInsertElement', function() {
 		Ember.run.next(this, function() {
 			var options = this.get('options');
 			try {
@@ -49,8 +49,8 @@ export default Ember.Component.extend({
 				console.warn('Couldn\'t initialise popover. Check and make sure that Bootstrap and the popover JS are included in your Brocfile. Error encountered: %o', e);
 			}			
 		});
-	}.on('didInsertElement'),
-	_cleanUp: function() {
+	}),
+	_cleanUp: Ember.on('willDestroyElement', function() {
 		this.$().popover('destroy');
-	}.on('willDestroyElement')
+	})
 });

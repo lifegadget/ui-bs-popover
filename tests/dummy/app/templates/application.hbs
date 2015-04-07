@@ -2,53 +2,57 @@
 <h4>Bootstrap Popover for Ember Apps</h4>
 
 <table class="demo-table">
-	<tr>
-		<td>
-			{{#ui-bs-popover message='a simple message'}}<i class="glyphicon glyphicon-phone"></i>{{/ui-bs-popover}}
-		</td>
-		<td>
-			A simple message w/o title
-		</td>
-	</tr>
-	<tr>
-		<td>
-			{{#ui-bs-popover message='a simple message' title='From Anonymous Source'}}<i class="glyphicon glyphicon-phone"></i>{{/ui-bs-popover}}
-		</td>
-		<td>
-			A simple message including title
-		</td>
-	</tr>
-	<tr>
-		<td>
-			{{#ui-bs-popover message='a simple message' title='From Anonymous Source' placement='right'}}<i class="glyphicon glyphicon-phone"></i>{{/ui-bs-popover}}
-		</td>
-		<td>
-			A simple message including title, message to the right
-		</td>
-	</tr>
-	<tr>
-		<td>
-			{{#ui-bs-popover message='a simple message' title='From Anonymous Source' placement='right' triggerEvent='hover' delay=300}}<i class="glyphicon glyphicon-phone"></i>{{/ui-bs-popover}}
-		</td>
-		<td>
-			A simple message including title, message to the right, hover event (300ms delay)
-		</td>
-	</tr>
-	<tr>
-		<td>
-			{{#ui-bs-popover message='a simple <b>message</b>' title='From Anonymous Source' placement='right'}}<i class="glyphicon glyphicon-info-sign"></i>{{/ui-bs-popover}}
-		</td>
-		<td>
-			A simple HTML based popup 
-		</td>
-	</tr>
-	<tr>
-		<td>
-			{{#ui-bs-popover message=message title='Curosity killed the cat' placement='right'}}<i class="glyphicon glyphicon-info-sign"></i>{{/ui-bs-popover}}
-		</td>
-		<td>
-			A more elaborate HTML based popup (from bound variable)
-		</td>
-	</tr>
+    <tr>
+        <td>
+            {{#ui-bs-popover message='a simple message'}}<i class="glyphicon glyphicon-phone"></i>{{/ui-bs-popover}}
+            </td>
+            <td>
+                A simple message w/o title
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{#ui-bs-popover message='a simple message' title='From Anonymous Source'}}
+                    <i class="glyphicon glyphicon-phone"></i>
+                {{/ui-bs-popover}}
+            </td>
+            <td>
+                    A simple message including title
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{#ui-bs-popover message='a simple message' title='From Anonymous Source' placement='right'}}
+                    <i class="glyphicon glyphicon-phone"></i>
+                {{/ui-bs-popover}}
+            </td>
+            <td>
+                A simple message including title, message to the right
+            </td>
+        </tr>
+        <tr>
+                    <td>
+                        {{#ui-bs-popover message='a simple message' title='From Anonymous Source' placement='right' triggerEvent='hover' delay=300}}<i class="glyphicon glyphicon-phone"></i>{{/ui-bs-popover}}
+                        </td>
+                        <td>
+                            A simple message including title, message to the right, hover event (300ms delay)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{#ui-bs-popover message='a simple <b>message</b>' title='From Anonymous Source' placement='right'}}<i class="glyphicon glyphicon-info-sign"></i>{{/ui-bs-popover}}
+                            </td>
+                            <td>
+                                A simple HTML based popup 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{#ui-bs-popover message=message title='Curosity killed the cat' placement='right'}}<i class="glyphicon glyphicon-info-sign"></i>{{/ui-bs-popover}}
+                                </td>
+                                <td>
+                                    A more elaborate HTML based popup (from bound variable)
+                                </td>
+                            </tr>
 	
-</p>
+</table>
